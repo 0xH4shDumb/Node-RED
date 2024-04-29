@@ -1,0 +1,19 @@
+function createAlertMessage(humidity) {
+    var message = "<h1 style='color: red;'>🚨 Alerte du taux d'humidité 🚨</h1>";
+    message += "<p style='font-size: 20px; color: red;'>Humidité actuelle : <strong>" + humidity + " %</strong></p>";
+    message += "<p style='font-size: 16px;'>Le taux d'humidité de la salle de travail dépasse le seuil critique de 60%.</p>";
+    message += "<p style='font-size: 16px;'>Merci de prendre les mesures nécessaires.</p>";
+    return message;
+}
+
+var seuilHumidite = 60;
+
+if (msg.payload.humidity > seuilHumidite) {
+    // Créer le message d'alerte
+    var alertMessage = createAlertMessage(msg.payload.humidity);
+    // Retourner le message d'alerte
+    return { payload: alertMessage };
+} else {
+    return null;
+}
+
