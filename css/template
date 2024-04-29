@@ -1,0 +1,63 @@
+<style>
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient-anim 60s ease infinite;
+  height: 100%;
+}
+
+@keyframes gradient-anim {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.layout-column {
+    flex-direction: column-reverse;
+}
+    
+body.nr-dashboard-theme md-toolbar {
+    background-color: transparent;
+    /* color: #fff; */
+}
+
+.nr-dashboard-theme ui-card-panel {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: transparent;
+}
+
+body.nr-dashboard-theme md-content {
+    background: transparent;
+    height: 100%;
+    color: #6db046;
+    margin-top: 15px;
+}
+
+body.nr-dashboard-theme md-content md-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {
+    color: white;
+}
+
+.nr-dashboard-cardpanel > p {
+    max-height: 50px;
+    min-height: 50px;
+    margin-left: 12px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 35px;
+}
+
+</style>
