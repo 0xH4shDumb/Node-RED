@@ -1,0 +1,12 @@
+// Récupérer l'état de la fuite d'eau depuis le message entrant (à adapter selon votre configuration)
+var leakageStatus = msg.payload.leakage_status;
+
+// Vérifier si une fuite d'eau est détectée
+if (leakageStatus === "leak") {
+    // Envoyer un message d'alerte
+    msg.payload = "Attention, une fuite d'eau est détectée dans la salle de travail"
+    return msg;
+} else {
+    msg.payload = "No Problem"
+    return msg;
+}
