@@ -1,0 +1,15 @@
+// Récupérer la température depuis le message entrant (à adapter selon votre configuration)
+var temperature = msg.payload.temperature;
+
+// Définir le seuil critique
+var seuilCritique = 40; // Température critique à ajuster selon vos besoins
+
+// Comparer la température avec le seuil critique
+if (temperature > seuilCritique) {
+    // Envoyer un message pour afficher l'alerte
+    msg.payload = "⚠ Température critique ⚠";
+    return msg;
+} else {
+    // Ne rien faire si la température est inférieure au seuil critique
+    return null;
+}
