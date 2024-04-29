@@ -1,0 +1,18 @@
+function createAlertMessage(leakage_status) {
+    var message = "<h1 style='color: red;'>🚨 Alerte de fuite 🚨</h1>";
+    message += "<p style='font-size: 16px;'>Une fuite est détectée au dans la salle de travail</p>";
+    message += "<p style='font-size: 16px;'>Merci de prendre les mesures nécessaires.</p>";
+    return message;
+}
+
+// Récupérer l'état de la fuite d'eau depuis le message entrant (à adapter selon votre configuration)
+var leakageStatus = msg.payload.leakage_status;
+
+// Vérifier si une fuite d'eau est détectée
+if (leakageStatus === "leak") {
+    // Envoyer un message d'alerte
+    var alertMessage = createAlertMessage(msg.payload.leakage_status);
+    return { payload: alertMessage };
+} else {
+    return null;
+}
