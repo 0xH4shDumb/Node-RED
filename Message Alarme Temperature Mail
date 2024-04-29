@@ -1,0 +1,21 @@
+function createAlertMessage(temperature) {
+    var message = "<h1 style='color: red;'>🚨 Alerte de température 🚨</h1>";
+    message += "<p style='font-size: 20px; color: red;'>Température actuelle : <strong>" + temperature + " °C</strong></p>";
+    message += "<p style='font-size: 16px;'>La température de la salle de travail dépasse le seuil critique de 40 °C.</p>";
+    message += "<p style='font-size: 16px;'>Merci de prendre les mesures nécessaires.</p>";
+    return message;
+}
+
+// Seuil de température pour l'alerte (en degrés Celsius)
+var seuilTemperature = 40;
+
+if (msg.payload.temperature > seuilTemperature) {
+    // Créer le message d'alerte
+    var alertMessage = createAlertMessage(msg.payload.temperature);
+    // Retourner le message d'alerte
+    return { payload: alertMessage };
+} else {
+    // Si la température est en dessous du seuil, ne rien faire
+    return null;
+}
+
